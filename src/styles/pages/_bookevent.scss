@@ -1,0 +1,36 @@
+#booking-event {
+    display: flex;
+    flex-direction: column;
+  
+    h1 {
+        font-size: 18px;
+    }
+  
+    .booking-form form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+  
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+  
+        label {
+            color: var(--grey-90);
+            font-size: 14px;
+            font-weight: 400;
+        }
+        input {
+            border-radius: 16px;
+            padding: 0.5rem;
+            border: 1px solid var(--grey-40);
+        }
+  
+        .book-button {
+          padding: 0.7rem;
+        }
+    }
+  }

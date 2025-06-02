@@ -1,0 +1,332 @@
+#dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .category {
+      margin: 1rem;
+      background-color: var(--dashboard-category-background-color);
+      color: var(--dashboard-category-text-color);
+    }
+  }
+  
+  /* STATISTICS */
+  
+  /* MOBILE */
+  .statistics {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1rem;
+    width: 100%;
+
+  .stat-card {
+      flex: 1;
+      border-radius: 16px;
+      background-color: var(--card-background-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0.5rem;
+  
+      .stat-icon {
+        background-color: var(--stat-card-icon-background-color);
+        color: var(--stat-card-icon-color);
+        border-radius: 40px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+  
+      .title {
+        color: var(--stat-card-title-color);
+        font-size: 12px;
+        font-weight: 350;
+      }
+  
+      .value {
+        font-size: 20px;
+        color: var(--stat-card-value-color);
+      }
+    }
+  }
+
+
+  
+  /* TABLET */
+  @media (width >= 768px) {
+    .statistics {
+
+      .stat-card {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+  
+        .stat-text {
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  
+  /* UPCOMING EVENTS */
+  
+  #upcoming-event {
+    max-width: 334px;
+  }
+  
+  .upcoming-event-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    border: 1px solid var(--card-border-color);
+    background-color: var(--card-background-color);
+
+    .image {
+      height: 180px;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+    }
+  
+    .card-header {
+      padding: 1rem;
+  
+      .title {
+        font-size: 18px;
+        font-weight: 600;
+      }
+  
+      .location {
+        color: var(--location-color);
+        font-size: 11px;
+        font-weight: 300;
+      }
+  
+      .description {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: var(--description-color);
+        font-size: 12px;
+        font-weight: 300;
+      }
+    }
+  
+    .card-footer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem;
+  
+      .event-date {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+  
+        .event-icon {
+          color: var(--icon-color);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 6px;
+          padding: 7px;
+          width: 20px;
+          height: 20px;
+        }
+  
+        .date {
+          font-size: 11px;
+          color: var(--date-text-color);
+        }
+  
+        .time {
+          margin-top: -0.5rem;
+          font-size: 10px;
+          font-weight: 500;
+          color: var(--time-text-color);
+        }
+      }
+  
+      .event-button {
+        background-color: var(--pink-button-background-color);
+        color: var(--pink-button-text-color);
+        border-radius: 30px;
+        padding: 0.7rem;
+        border: none;
+      }
+    }
+  }
+  
+  /* TABLET */
+  @media (width >= 768px) {
+    #upcoming-event {
+      max-width: 644px;
+      min-height: 223px;
+  
+      .upcoming-event-card {
+        height: 187px;
+        flex-direction: row;
+  
+        .image {
+          width: 40%;
+          height: 100%;
+          background-color: var(--image-background-color);
+          border-bottom-left-radius: 16px;
+          flex-shrink: 0;
+        }
+  
+        .information {
+          margin-top: -1rem;
+          display: flex;
+          flex-direction: column;
+        }
+  
+        .card-footer {
+          margin-top: -1rem;
+        }
+      }
+    }
+  }
+  
+  /* DESKTOP */
+
+  @media (width >= 1400px) {
+    #dashboard {
+      flex-direction: column;
+      gap: 2rem;
+      position: relative;
+      padding-right: 360px;
+  
+      #upcoming-event {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 334px;
+  
+        .upcoming-event-card {
+          flex-direction: column;
+          min-height: 400px;
+  
+          .image {
+            width: 100%;
+            height: 50%;
+          }
+        }
+      }
+    }
+  }
+
+/* ALL EVENTS */
+
+/* MOBILE */
+
+#all-events {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;        
+    
+    .title {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        #view-all-button {
+            background-color: var(--dashboard-view-all-button-background-color);
+            color: var(--dashboard-view-all-button-text-color);
+            width: 110px;
+            height: 35px;
+        }
+    }
+
+    .event-card-collection {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .image {
+          height: 164px;
+          border-top-left-radius: 16px;
+          border-top-right-radius: 16px;
+        }
+
+        .card-information {
+            padding: 0.8rem;
+            
+            .title {
+                font-size: 14px;
+                font-weight: 500;
+            }
+
+            .location {
+                font-size: 12px;
+            }
+        }
+
+            .event-details {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+
+                .date-group {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+            }
+
+            .card-footer {
+                padding: 0.4rem 1rem 0 1rem;
+                margin-top: auto;
+            }
+    }
+
+    /* TABLET */
+    @media (width >= 768px) {
+
+      #dashboard {
+        .event-card-collection {
+          display: flex;
+          flex-direction: row;
+          align-items: stretch;
+
+          .event-card {
+              min-height: 280px;
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+          }
+
+          .card-link {
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+      }
+  }
+      }
+
+    @media (width >= 1400px) {
+
+      #dashboard {
+        .event-card-collection {
+          width: 100%;
+      }
+      }
+    }
+

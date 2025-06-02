@@ -1,0 +1,22 @@
+.event-button {    
+    border-radius: 30px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+.book-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--book-button-background-color);
+    border: 1px solid var(--book-button-border-color);
+    color: var(--book-button-text-color);
+    border-radius: 30px;
+
+    &:hover {
+        background-color: var(--book-button-hover-background-color);
+    }
+}

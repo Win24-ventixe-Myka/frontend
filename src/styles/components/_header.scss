@@ -1,0 +1,100 @@
+/* HEADER */
+
+header {
+  display: none;
+}
+
+/* TABLET */
+
+@media (width >= 768px) {
+
+  header {
+    grid-area: header;
+    background-color: var(--header-background-color);
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header-headline {
+      display: flex;
+      flex-direction: column;
+      margin-top: -1rem;
+
+      h1 {
+        color: var(--header-headline-title-text-color);
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      span {
+        color: var(--header-headline-greeting-text-color);
+        font-size: 12px;
+        font-weight: 400;
+      }
+
+    }
+
+    .header-search {
+      background-color: var(--header-button-background-color);
+      border-radius: 40px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        color: var(--header-button-color);
+      }
+
+      .search-input {
+        display: none;
+      }
+    }
+  }
+
+}
+
+/* DESKTOP */
+
+@media (width >= 1400px) {
+
+  header {
+
+    .header-search {
+      background-color: black;
+      margin-right: 10rem;
+
+      .search-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        i {
+          color: black;
+          position: absolute;
+          right: 1rem;
+        }
+
+        
+      }
+      .search-input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        padding: 1rem;
+        border: none;
+        width: 250px;
+      }
+
+    }
+  }
+
+}
+
+
+
