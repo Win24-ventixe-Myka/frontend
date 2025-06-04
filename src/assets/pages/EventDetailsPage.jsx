@@ -7,9 +7,14 @@ import PackageList from '../components/PackageList'
 const EventDetailsPage = () => {
   const { id } = useParams()
   const [event, setEvent] = useState(null)
+  const token = localStorage.getItem('token')
 
   const getEvents = async () => {
-      const res = await fetch(`https://eventservice-mvp-deawdpaqc7d8c9hq.swedencentral-01.azurewebsites.net/api/events/${id}`)
+    const res = await fetch(`https://eventservice-mvp-deawdpaqc7d8c9hq.swedencentral-01.azurewebsites.net/api/events/${id}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
       if (res.ok) {
         const response = await res.json()
         setEvent(response.result || response)
