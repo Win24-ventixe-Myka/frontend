@@ -17,14 +17,22 @@ const AllEvents = () => {
   ]
 
   const getEvents = async () => {
-    const res = await fetch("https://eventservice-mvp-deawdpaqc7d8c9hq.swedencentral-01.azurewebsites.net/api/events")
+    const token = localStorage.getItem('token') // Hämtar inloggningstoken
+    if (!token) { // Kontroll om användaren inte är inloggad
+      return
+    }
+
+    const res = await fetch("https://eventservice-mvp-deawdpaqc7d8c9hq.swedencentral-01.azurewebsites.net/api/events", {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
   
     if (res.ok) {
       const data = await res.json()
 
       // Hämtar alla events från apiet
       const allEvents = Array.isArray(data) ? data : data.result
-
       // Hämtar eventet som matchar idn
       const filtered = allEvents.filter(event => eventIds.includes(event.id))
       setEvents(filtered)

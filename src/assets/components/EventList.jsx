@@ -5,7 +5,14 @@ const EventList = () => {
     const [events, setEvents] = useState([])
 
     const getEvents = async () => {
-      const res = await fetch("https://eventservice-mvp-deawdpaqc7d8c9hq.swedencentral-01.azurewebsites.net/api/events")
+      const token = localStorage.getItem('token')
+      if (!token) return
+
+      const res = await fetch("https://eventservice-mvp-deawdpaqc7d8c9hq.swedencentral-01.azurewebsites.net/api/events", {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
     
       if (res.ok) {
         const data = await res.json()
