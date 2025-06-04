@@ -1,17 +1,21 @@
 import React, { useState } from 'react'
+import { useAuth } from '../contexts/AuthContext'
 
 const BookEventForm = ({ eventId }) => {
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
+  const { token } = useAuth()
   const [formData, setFormData] = useState({ eventId: eventId, 
     firstName: '', lastName: '', email: '', streetName: '', postalCode: '', city: '', ticketQuantity: 1 })
+  
 
   const postBooking = async () => {
     try {
       const res = await fetch(`https://bookingservice-mvp-d6cpa4ghhuabbvdy.swedencentral-01.azurewebsites.net/api/bookings`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}` // Autentisering med token från backend
         },
         body: JSON.stringify(formData)
       })
@@ -22,7 +26,7 @@ const BookEventForm = ({ eventId }) => {
         setSuccess("Booking successful!")
       }
     } catch (err) {
-      setError("Error submitting booking", err.message)
+      setError("Error submitting booking: " + err.message)
     }
   
 
