@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 
 const UpcomingEvent = () => {
-    const [event, setEvents] = useState(null)
+    const [event, setEvents] = useState([])
     const {token} = useAuth()
   
     const eventId = [
