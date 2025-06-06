@@ -1,22 +1,24 @@
 {
-    "routes": [
-      {
-        "route": "/api/*",
-        "allowedRoles": ["anonymous"]
-      },
-      {
-        "route": "/events/*",
-        "rewrite": "/index.html"
-      },
-
-      {
-        "route": "/dashboard/*",
-        "rewrite": "/index.html"
-      },
-      
-      {
-        "route": "/*",
-        "rewrite": "/index.html"
-      }
-    ]
-  }
+  "routes": [
+    {
+      "route": "/api/*",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/assets/*",
+      "serve": "/assets/"
+    },
+    {
+      "route": "/events/*",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/dashboard/*",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/*",
+      "rewrite": "/index.html"
+    }
+  ]
+}
