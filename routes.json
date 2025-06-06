@@ -8,6 +8,12 @@
         "route": "/events/*",
         "rewrite": "/index.html"
       },
+
+      {
+        "route": "/dashboard/*",
+        "rewrite": "/index.html"
+      },
+      
       {
         "route": "/*",
         "rewrite": "/index.html"
