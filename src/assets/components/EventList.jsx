@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import EventItem from './EventItem'
+import { useAuth } from '../contexts/AuthContext'
 
 const EventList = () => {
     const [events, setEvents] = useState([])
+    const {token} = useAuth()
 
     const getEvents = async () => {
-      const token = localStorage.getItem('token')
       if (!token) return
 
       const res = await fetch("https://eventservice-mvp-deawdpaqc7d8c9hq.swedencentral-01.azurewebsites.net/api/events", {
@@ -29,7 +30,7 @@ const EventList = () => {
 
     useEffect(() => {
         getEvents()
-    }, [])
+    }, [token])
 
   return (
     <section id='events'>

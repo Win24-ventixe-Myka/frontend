@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import formatDate from '../helpers/formatDate'
 import { Link } from 'react-router-dom'
+import { useAuth } from '../contexts/AuthContext'
 
 const UpcomingEvent = () => {
-    const [event, setEvents] = useState([])
+    const [event, setEvents] = useState(null)
+    const {token} = useAuth()
   
     const eventId = [
       'fb38fa10-9257-49a8-8c1b-f732ded15d5e'
     ]
   
     const getEvents = async () => {
-      const token = localStorage.getItem('token'); // Hämtar inloggningstoken
+      
       if (!token) { // Kontroll om användaren inte är inloggad
         return
       }
