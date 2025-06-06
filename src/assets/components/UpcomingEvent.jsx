@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 
 const UpcomingEvent = () => {
-    const [event, setEvents] = useState([])
+    const [event, setEvents] = useState(null)
     const {token} = useAuth()
   
     const eventId = [
@@ -35,7 +35,7 @@ const UpcomingEvent = () => {
   
         useEffect(() => {
             getEvents()
-        }, [])
+        }, [token])
   return (
 
 <div id="upcoming-event" className='dashboard-events'>
