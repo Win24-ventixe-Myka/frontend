@@ -5,7 +5,7 @@ import { useAuth } from '../contexts/AuthContext'
 
 const AllEvents = () => {
   const {token} = useAuth()
-  const [events, setEvents] = useState(null)
+  const [events, setEvents] = useState([])
   const navigate = useNavigate()
   const handleClick = () => {
     navigate('/events')
@@ -54,7 +54,7 @@ const AllEvents = () => {
       </div>
 
       <section className='event-card-collection'>
-        {events?.map(event => (
+        {events.map(event => (
           <Link to={`/events/${event.id}`} key={event.id} className='card-link'>
           <DashboardEventCard 
           key={event.id}

@@ -36,6 +36,9 @@ const UpcomingEvent = () => {
         useEffect(() => {
             getEvents()
         }, [token])
+
+        if (!event) return null
+        
   return (
 
 <div id="upcoming-event" className='dashboard-events'>
